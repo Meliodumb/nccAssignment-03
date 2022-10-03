@@ -49,10 +49,13 @@
             <!-- Refresh the page -->
             <button type="button" onclick="location.reload()">Reset</button>
             <button type="button" onclick="genRand()">Generate</button><br><br>
-            <p style="font-size: 120%;">Find the <input type="number" id="find"
-                    style="height:40px; font-size: 120%; width:100px ;">th
-                number.</p>
-            <button type="button" onclick="findN()">Find</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- Find a number by index -->
+            <div style="display: none;" id="hidden">
+                <p style="font-size: 120%;">Find the <input type="number" id="find"
+                        style="height:40px; font-size: 120%; width:100px ;">th
+                    number.</p>
+                <button type="button" onclick="findN()">Find</button>
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         </form>
     </div>
@@ -80,6 +83,7 @@
             }
         }
         document.querySelector('#genNumb').innerHTML = randNum;
+        document.querySelector('#hidden').style = "display: block";
     }
 
     function findN() {
